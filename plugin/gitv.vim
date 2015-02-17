@@ -99,6 +99,8 @@ fu! Gitv_OpenGitCommand(command, windowCmd, ...) "{{{
                 exec 'set '. (tempSplitRight ? '' : 'no') . 'splitright'
             endtry
         endif
+        silent setlocal modifiable
+        silent setlocal noreadonly
         if !(&modifiable)
             return 0
         endif
